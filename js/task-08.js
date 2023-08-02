@@ -1,7 +1,7 @@
 const loginForm = document.getElementById("loginForm");
 
 loginForm.addEventListener("submit", function (event) {
-  event.preventDefault(); // Prevent page refresh
+  event.preventDefault();
 
   const formData = new FormData(loginForm);
 

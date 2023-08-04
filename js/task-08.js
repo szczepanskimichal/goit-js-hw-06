@@ -1,19 +1,20 @@
-const loginForm = document.getElementById("loginForm");
+const loginForm = document.querySelector(".login-form");
 
 loginForm.addEventListener("submit", function (event) {
   event.preventDefault();
+  const emailInput = loginForm.elements.email;
+  const passwordInput = loginForm.elements.password;
 
-  const formData = new FormData(loginForm);
-
-  if (!formData.get("email") || !formData.get("password")) {
-    alert("Please fill in all fields.");
+  if (!emailInput.value || !passwordInput.value) {
+    alert("Wypełnij wszystkie pola formularza.");
   } else {
-    const formObject = {
-      email: formData.get("email"),
-      password: formData.get("password"),
+    const formData = {
+      email: emailInput.value,
+      password: passwordInput.value,
     };
 
-    console.log(formObject);
+    console.log("Dane formularza:", formData);
+
     loginForm.reset();
   }
 });
